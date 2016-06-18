@@ -4,9 +4,7 @@
   "description": "A MEAN Todo List",
   "main": "app.js",
   "scripts": {
-    "bundle": "./node_modules/.bin/browserify client/js/*.js -o client/bundle.js",
-    "watch": "./node_modules/.bin/watchify client/js/*.js -o client/bundle.js -w",
-    "start": "node app & npm run bundle & npm run watch"
+    "start": "node app"
   },
   "author": "Blake Guilloud",
   "license": "ISC",
@@ -15,10 +13,8 @@
     "angular-route": "^1.5.7",
     "body-parser": "^1.15.1",
     "bootstrap": "^3.3.6",
-    "browserify": "^13.0.1",
     "express": "^4.14.0",
     "mongodb": "^2.1.18",
-    "mongoose": "^4.5.0",
-    "watchify": "^3.7.0"
+    "mongoose": "^4.5.0"
   }
 }
