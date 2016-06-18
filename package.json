@@ -6,7 +6,7 @@
   "scripts": {
     "bundle": "./node_modules/.bin/browserify src/js/*.js -o bundle.js",
     "watch": "./node_modules/.bin/watchify src/js/*.js -o bundle.js -w",
-    "start": "npm run bundle & npm run watch & node app"
+    "start": "node app"
   },
   "author": "Blake Guilloud",
   "license": "ISC",
