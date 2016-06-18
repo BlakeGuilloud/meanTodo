@@ -81,7 +81,7 @@
             }
 
             function clearForm() {
-                $scope.todo = {}
+                $scope.todo = undefined;
             }
         });
 }());
