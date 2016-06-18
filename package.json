@@ -1,5 +1,5 @@
 {
-  "name": "todo-list",
+  "name": "mean-to-do",
   "version": "1.0.0",
   "description": "A MEAN Todo List",
   "main": "app.js",
@@ -8,7 +8,7 @@
     "watch": "./node_modules/.bin/watchify src/js/*.js -o bundle.js -w",
     "start": "npm run bundle & npm run watch & node app"
   },
-  "author": "",
+  "author": "Blake Guilloud",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.7",
