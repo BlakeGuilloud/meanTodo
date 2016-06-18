@@ -6,7 +6,7 @@
         .config(function($routeProvider) {
             $routeProvider
                 .when('/', {
-                    templateUrl: 'src/js/todoList.html',
+                    templateUrl: 'client/js/todoList.html',
                     controller: 'todoController'
                 });
         });

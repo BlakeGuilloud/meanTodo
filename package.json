@@ -1,14 +1,14 @@
 {
-  "name": "todo-list",
+  "name": "mean-to-do",
   "version": "1.0.0",
   "description": "A MEAN Todo List",
   "main": "app.js",
   "scripts": {
-    "bundle": "./node_modules/.bin/browserify src/js/*.js -o bundle.js",
-    "watch": "./node_modules/.bin/watchify src/js/*.js -o bundle.js -w",
-    "start": "npm run bundle"
+    "bundle": "./node_modules/.bin/browserify client/js/*.js -o client/bundle.js",
+    "watch": "./node_modules/.bin/watchify client/js/*.js -o client/bundle.js -w",
+    "start": "node app & npm run bundle & npm run watch"
   },
-  "author": "",
+  "author": "Blake Guilloud",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.7",

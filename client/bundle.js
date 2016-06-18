@@ -1,3 +1,19 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function() {
+    'use strict';
+
+    angular
+        .module('todoList', ['ngRoute'])
+        .config(function($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'client/js/todoList.html',
+                    controller: 'todoController'
+                });
+        });
+}());
+
+},{}],2:[function(require,module,exports){
 (function() {
     'use strict';
 
@@ -25,6 +41,7 @@
             }
 
             function postTodo(todo) {
+                if (!todo) return;
                 return todoService.postTodo(todo)
                     .then((todos) => {
                         getTodos();
@@ -68,3 +85,40 @@
             }
         });
 }());
+
+},{}],3:[function(require,module,exports){
+(function() {
+    'use strict';
+
+    angular
+        .module('todoList')
+        .factory('todoService', function($http) {
+
+            function getTodos() {
+                return $http.get('/todos');
+            }
+
+            function postTodo(todo) {
+                return $http.post('/todos', todo);
+            }
+
+            function deleteTodo(todo) {
+                let todoId = todo._id;
+                return $http.delete('/todos/' + todoId);
+            }
+
+            function editTodo(todo) {
+                let todoId = todo._id;
+                return $http.put('/todos/' + todoId, todo);
+            }
+
+            return {
+                getTodos,
+                postTodo,
+                deleteTodo,
+                editTodo,
+            }
+        });
+}());
+
+},{}]},{},[1,2,3]);

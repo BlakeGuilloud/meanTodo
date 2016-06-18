@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 
 const TodoSchema = new Schema({
     title:    String,
-    author:   String,
-    complete: { type: Boolean, default: false },
-    date:     String
+    complete: {
+      type: Boolean,
+      default: false
+    },
 });
 
 module.exports = mongoose.model('Todo', TodoSchema);

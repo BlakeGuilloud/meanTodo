@@ -4,9 +4,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const Todo = require('./Todo.model');
+const Todo = require('./server/todos/todo.schema');
 
-const db = 'mongodb://localhost/test12';
+const db = 'mongodb://localhost/todoList';
 const port = process.env.PORT || 3000;
 
 mongoose.connect(db);
@@ -59,9 +59,7 @@ app.put('/todos/:id', (req, res) => {
     }, {
         $set: {
             title:    req.body.title,
-            author:   req.body.author,
             complete: req.body.complete,
-            date:     Date.now()
         }
     }, {
         upsert: true
