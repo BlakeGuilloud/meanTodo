@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "bundle": "./node_modules/.bin/browserify src/js/*.js -o bundle.js",
-    "watch": "./node_modules/.bin/watchify src/js/*.js -o bundle.js -w",
-    "start": "node app"
+    "watch": "./node_modules/.bin/watchify src/js/*.js -o bundle.js -w"
   },
   "author": "Blake Guilloud",
   "license": "ISC",
