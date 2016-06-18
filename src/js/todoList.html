@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div class="jumbotron text-center">
+      <h1><span class="text-muted">M.E.A.N. Todo List</span> <span class="label label-primary">{{ todos.length }}</span></h1>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12">
+          <form class="form-inline row">
+              <div class="form-group col-sm-5 col-sm-offset-2">
+                  <input style="width: 100%;" ng-model="todo.title" type="text" class="form-control input-lg text-center" placeholder="What Todo?">
+              </div>
+              <div class="form-group">
+                 <button ng-click="postTodo(todo)" type="submit" class="btn btn-primary btn-lg btn-block">Add Todo</button>
+              </div>
+              <div class="form-group">
+                 <button ng-click="clearCompleted(todos)" type="submit" class="btn btn-danger btn-lg btn-block">Clear Completed</button>
+              </div>
+          </form>
+      </div>
+  </div>
+
+  <div class="row" ng-repeat="todo in todos">
+      <div class="col-sm-8 col-sm-offset-2">
+          <div class="row">
+              <h3 class="col-sm-9 text-primary">{{todo.title}}</h3>
+              <div class="col-sm-12" ng-if="todo.edit">
+                  <form class="form-inline row">
+                      <div class="form-group col-sm-9">
+                          <input style="width: 100%;" ng-model="todo.title" type="text" class="form-control input-lg text-center" placeholder="What Todo?">
+                      </div>
+                      <div class="form-group col-sm-3">
+                         <button ng-click="editTodo(todo)" type="submit" class="btn btn-success btn-lg btn-block">Edit Todo</button>
+                      </div>
+                  </form>
+              </div>
+              <div ng-if="!todo.edit">
+                  <h3 ng-class="{ 'text-primary': todo.complete}" ng-click="completeTodo(todo)" class="col-sm-1 glyphicon glyphicon-ok-circle text-muted"></h3>
+                  <h3 ng-click="todo.edit = true" class="col-sm-1 glyphicon glyphicon-edit text-success"></h3>
+                  <h3 ng-click="deleteTodo(todo)" class="col-sm-1 glyphicon glyphicon-trash text-danger"></h3>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <footer class="text-center">
+    <span class="glyphicon glyphicon-flag"></span>&nbsp Created by <a href="http://github.com/blakeGuilloud">Blake Guilloud</a>
+  </footer>
+
+</div>

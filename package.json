@@ -1,0 +1,24 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "A MEAN Todo List",
+  "main": "app.js",
+  "scripts": {
+    "bundle": "./node_modules/.bin/browserify src/js/*.js -o bundle.js",
+    "watch": "./node_modules/.bin/watchify src/js/*.js -o bundle.js -w",
+    "start": "npm run bundle & npm run watch & node app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
+    "browserify": "^13.0.1",
+    "express": "^4.14.0",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.5.0",
+    "watchify": "^3.7.0"
+  }
+}
