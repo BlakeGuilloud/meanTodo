@@ -4,7 +4,7 @@
   "description": "A MEAN Todo List",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app.js"
   },
   "author": "Blake Guilloud",
   "license": "ISC",
