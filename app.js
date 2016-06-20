@@ -6,7 +6,7 @@ const bodyParser  = require('body-parser');
 const mongoose    = require('mongoose');
 const TodoRoute   = require('./server/todos/todo.controller');
 
-const db    = 'mongodb://localhost/todoList';
+const db    = process.env.MONGODB_URI || 'mongodb://localhost/todoList';
 const port  = process.env.PORT || 8100;
 
 mongoose.connect(db);
