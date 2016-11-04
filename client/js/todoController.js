@@ -15,6 +15,7 @@
 
             function activate() {
                 getTodos();
+                console.log('the process', process.env);
             }
 
             function getTodos() {
